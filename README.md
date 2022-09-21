@@ -1,6 +1,6 @@
 # rc
 
-A git commit message generator based on [Conventional Commits](https://www.conventionalcommits.org/)
+A tool to write a commit message based on [Conventional Commits](https://www.conventionalcommits.org/)
 
 # Example
 
