@@ -1,4 +1,4 @@
-# rc
+# rcz
 
 A tool to write a commit message based on [Conventional Commits](https://www.conventionalcommits.org/)
 
