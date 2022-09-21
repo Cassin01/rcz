@@ -5,7 +5,7 @@ A git commit message generator based on [Conventional Commits](https://www.conve
 # Example
 
 ```sh
-function gk {
+function gitk {
     git commit -m "`rcz`"
 }
 ```
