@@ -2,9 +2,15 @@
 
 A tool to write a commit message based on [Conventional Commits](https://www.conventionalcommits.org/)
 
-# Example
+## Installation
 
 ```sh
+cargo install rcz
+```
+
+## Example
+
+```zsh
 function gitk {
     git commit -m "`rcz`"
 }
