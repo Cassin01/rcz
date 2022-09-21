@@ -2,6 +2,14 @@
 name = "rc"
 version = "0.1.0"
 edition = "2021"
+authors = ["Cassin01"]
+license = "MIT OR Apache-2.0"
+description = "A tool to write a commit message"
+readme = "README.md"
+homepage = "https://github.com/Cassin01/rc"
+repository = "https://github.com/Casin01/rc"
+keywords = ["cli", "git"]
+categories = ["command-line-utilities"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
