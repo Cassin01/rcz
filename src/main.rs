@@ -2,16 +2,16 @@ use dialoguer::{theme::ColorfulTheme, FuzzySelect, Input};
 
 fn main() {
     let selections = &[
-        "fix: ",
-        "feat: ",
-        "BREAKING CHANGE: ",
+        "fix:",
+        "feat:",
+        "BREAKING CHANGE:",
         "build:",
-        "chore: ",
-        "ci: ",
-        "docs: ",
-        "style: ",
-        "refactor: ",
-        "perf: ",
+        "chore:",
+        "ci:",
+        "docs:",
+        "style:",
+        "refactor:",
+        "perf:",
         "test:",
     ];
 
@@ -26,5 +26,5 @@ fn main() {
         .with_prompt(selections[selection])
         .interact_text()
         .unwrap();
-    println!("{}{}", selections[selection], input);
+    println!("{} {}", selections[selection], input);
 }

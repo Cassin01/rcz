@@ -6,6 +6,6 @@ A git commit message generator based on [Conventional Commits](https://www.conve
 
 ```sh
 function gk {
-    git commit -m "`rc`"
+    git commit -m "`rcz`"
 }
 ```
