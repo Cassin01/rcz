@@ -13,8 +13,12 @@ cargo install rcz
 
 ```zsh
 # bash
-function gitk {
-    git commit -m "`rcz`"
+function gitk() {
+  if local output=$(rcz); then
+    git commit -m "${output}"
+  else
+    echo "Err: failed to generate a commit message"
+  fi
 }
 ```
 
