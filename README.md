@@ -1,6 +1,7 @@
 # rcz
 
-A tool to write a commit message based on [Conventional Commits](https://www.conventionalcommits.org/)  inspired by [git-cz](https://github.com/streamich/git-cz)
+A tool to write a commit message based on [Conventional Commits](https://www.conventionalcommits.org/)  
+inspired by [git-cz](https://github.com/streamich/git-cz)
 
 ## Installation
 
