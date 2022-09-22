@@ -1,13 +1,13 @@
 [package]
 name = "rcz"
-version = "0.1.6"
+version = "0.1.7"
 edition = "2021"
 authors = ["Cassin01"]
 license = "MIT OR Apache-2.0"
 description = "A tool to write a commit message"
 readme = "README.md"
 homepage = "https://github.com/Cassin01/rcz"
-repository = "https://github.com/Casin01/rcz"
+repository = "https://github.com/Cassin01/rcz"
 keywords = ["cli", "git"]
 categories = ["command-line-utilities"]
 
