@@ -77,40 +77,28 @@ fn command(cmd: &str) -> Res<String> {
     Ok(ret)
 }
 
+fn shell_command(name: &str) -> bool {
+    let cs: Vec<char> = name.chars().collect();
+    if cs.first() == Some(&'{') || cs.last() == Some(&'}') {
+        true
+    } else {
+        false
+    }
+}
+
 fn inline(name: &str, index: usize, types: &Vec<Type>) -> String {
     match name {
         "emoji" => types[index].emoji.clone(),
         "type" => types[index].value.clone(),
-        "subject" => {
+        "description" => types[index].description.clone(),
+        cmd if shell_command(cmd) => command(&cmd[1..cmd.len() - 1]).unwrap(),
+        x => {
             let input: String = Input::with_theme(&ColorfulTheme::default())
-                .with_prompt(format!("{}", "subject"))
+                .with_prompt(format!("{}", x))
                 .interact_text()
                 .unwrap();
             input
         }
-        "body" => {
-            let input: String = Input::with_theme(&ColorfulTheme::default())
-                .with_prompt(format!("{}", "body"))
-                .interact_text()
-                .unwrap();
-            input
-        }
-        "footer" => {
-            let input: String = Input::with_theme(&ColorfulTheme::default())
-                .with_prompt(format!("{}", "footer"))
-                .interact_text()
-                .unwrap();
-            input
-        }
-        "scope" => {
-            let input: String = Input::with_theme(&ColorfulTheme::default())
-                .with_prompt(format!("{}", "scope"))
-                .interact_text()
-                .unwrap();
-            let ret = "(".to_owned() + &input + ")";
-            ret
-        }
-        cmd => command(&cmd).unwrap(),
     }
 }
 
@@ -125,14 +113,15 @@ fn p_syn(line: &str, index: usize, types: &Vec<Type>) -> Result<String, String> 
                 loop {
                     if let Some(c) = cs.next() {
                         if c == '}' {
-                            if let Some(k) = queue.pop() {
-                                r.push(k);
+                            if let Some(_) = queue.pop() {
+                                r.push(c);
                             } else {
                                 ret.push_str(&inline(&r, index, types));
                                 break;
                             }
                         } else if c == '{' {
                             queue.push(c);
+                            r.push(c);
                         } else {
                             r.push(c);
                         }
