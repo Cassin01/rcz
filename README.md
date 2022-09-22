@@ -96,13 +96,11 @@ All section etc `{scope}` that you can add on the format are bellow.
 
 - `{type}`
 - `{emoji}`
-- `{subject}`
-- `{section}`
-- `{scope}`
-- `{body}`
-- `{footer}`
+- `{description}`
 
-:warning: Another string (`{echo 'foo'}`, `{date}` etc) will be interpreted as shell script.
+:warning: The string that enclosed in double brackets (`{{echo 'foo'}}`, `{{date}}` etc) is interpreted as shell script.
+
+Other strings (`{body}`, `{footer}`, `{header}` etc) is interpreted as custom input.
 
 A example for your customize is bellow.
 
