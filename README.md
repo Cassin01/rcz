@@ -32,7 +32,7 @@ The configuration file will be automatically generated on:
 
 ```toml
 format = '''
-{type}: {emoji}{subject}'''
+{type}: {subject}'''
 
 [[types]]
 description = 'A bug fix'
