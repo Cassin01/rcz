@@ -110,3 +110,5 @@ format = '''
 {body}
 {footer}'''
 ```
+
+Another string (`{echo 'foo'}`, `{date}` etc) will be interpreted as shell script.

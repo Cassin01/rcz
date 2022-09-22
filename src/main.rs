@@ -58,6 +58,25 @@ impl Type {
     }
 }
 
+fn command(cmd: &str) -> Res<String> {
+    use std::process::Command;
+
+    let output = if cfg!(target_os = "windows") {
+        Command::new("cmd")
+            .args(["/C", cmd])
+            .output()
+            .expect("failed to execute process")
+    } else {
+        Command::new("sh")
+            .arg("-c")
+            .arg(cmd)
+            .output()
+            .expect("failed to execute process")
+    };
+    let ret = String::from_utf8(output.stdout)?;
+    Ok(ret)
+}
+
 fn inline(name: &str, index: usize, types: &Vec<Type>) -> String {
     match name {
         "emoji" => types[index].emoji.clone(),
@@ -91,7 +110,7 @@ fn inline(name: &str, index: usize, types: &Vec<Type>) -> String {
             let ret = "(".to_owned() + &input + ")";
             ret
         }
-        _ => "".to_string(),
+        cmd => command(&cmd).unwrap(),
     }
 }
 
@@ -101,12 +120,19 @@ fn p_syn(line: &str, index: usize, types: &Vec<Type>) -> Result<String, String> 
     loop {
         if let Some(c) = cs.next() {
             if c == '{' {
+                let mut queue = vec![];
                 let mut r = String::new();
                 loop {
                     if let Some(c) = cs.next() {
                         if c == '}' {
-                            ret.push_str(&inline(&r, index, types));
-                            break;
+                            if let Some(k) = queue.pop() {
+                                r.push(k);
+                            } else {
+                                ret.push_str(&inline(&r, index, types));
+                                break;
+                            }
+                        } else if c == '{' {
+                            queue.push(c);
                         } else {
                             r.push(c);
                         }
