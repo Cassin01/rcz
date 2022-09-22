@@ -102,7 +102,7 @@ All section etc `{scope}` that you can add on the format are bellow.
 - `{body}`
 - `{footer}`
 
-Another string (`{echo 'foo'}`, `{date}` etc) will be interpreted as shell script.
+:warning: Another string (`{echo 'foo'}`, `{date}` etc) will be interpreted as shell script.
 
 A example for your customize is bellow.
 
