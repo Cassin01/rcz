@@ -1,6 +1,6 @@
 [package]
 name = "rcz"
-version = "0.1.4"
+version = "0.1.5"
 edition = "2021"
 authors = ["Cassin01"]
 license = "MIT OR Apache-2.0"
@@ -15,3 +15,6 @@ categories = ["command-line-utilities"]
 
 [dependencies]
 dialoguer = {version="0.10.2", features = ["fuzzy-select"]}
+confy = "0.5.0"
+serde_derive = "1.0.144"
+serde = { version = "1.0", features = ["derive"] }
