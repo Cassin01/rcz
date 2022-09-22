@@ -91,6 +91,14 @@ fn inline(name: &str, index: usize, types: &Vec<Type>) -> String {
         "emoji" => types[index].emoji.clone(),
         "type" => types[index].value.clone(),
         "description" => types[index].description.clone(),
+        "scope" => {
+            let input: String = Input::with_theme(&ColorfulTheme::default())
+                .with_prompt(format!("{}", "scope"))
+                .interact_text()
+                .unwrap();
+            let ret = "(".to_owned() + &input + ")";
+            ret
+        },
         cmd if shell_command(cmd) => command(&cmd[1..cmd.len() - 1]).unwrap(),
         x => {
             let input: String = Input::with_theme(&ColorfulTheme::default())
