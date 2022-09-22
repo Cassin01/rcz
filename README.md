@@ -101,7 +101,7 @@ All section etc `{scope}` that you can add on the format are bellow.
 :warning: The string that enclosed in double brackets (`{{echo 'foo'}}`, `{{date}}` etc) is interpreted as shell script.
 
 Other strings (`{body}`, `{footer}`, `{header}` etc) is interpreted as custom input.  
-The string will be used as a prompt message.
+The string is used as a prompt message.
 
 A example for your customize is bellow.
 
