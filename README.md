@@ -21,6 +21,12 @@ function gitz() {
   fi
 }
 ```
+<details>
+<summary>gif</summary>
+
+![gif](https://github.com/Cassin01/rcz/blob/34789fd4c59983201745cbe3c760252e23320d69/asset/example-gitz.gif)
+
+</details>
 
 ## Configuration
 
