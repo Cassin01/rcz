@@ -13,7 +13,7 @@ cargo install rcz
 
 ```zsh
 # bash
-function gitk() {
+function gitz() {
   if local output=$(rcz); then
     git commit -m "${output}"
   else
