@@ -175,3 +175,19 @@ fn main() -> Res<()> {
     core()?;
     Ok(())
 }
+
+#[test]
+fn test_parser() {
+    let format = "{type}: {emoji}{{echo 'hehe'}}".to_string();
+    let types = vec![Type::new("fix", "A bug fix", "🐛")];
+    let ret = parser(format, 0, &types);
+    assert_eq!(ret, "\nfix: 🐛hehe\n");
+}
+
+#[test]
+fn test_parser2() {
+    let format = "{type}: {emoji}\n{{echo 'hehe'}}".to_string();
+    let types = vec![Type::new("fix", "A bug fix", "🐛")];
+    let ret = parser(format, 0, &types);
+    assert_eq!(ret, "\nfix: 🐛\nhehe\n");
+}
