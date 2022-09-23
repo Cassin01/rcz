@@ -79,7 +79,7 @@ fn command(cmd: &str) -> Res<String> {
 
 fn shell_command(name: &str) -> bool {
     let cs: Vec<char> = name.chars().collect();
-    if cs.first() == Some(&'{') || cs.last() == Some(&'}') {
+    if cs.first() == Some(&'{') && cs.last() == Some(&'}') {
         true
     } else {
         false
