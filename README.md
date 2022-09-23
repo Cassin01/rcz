@@ -3,6 +3,8 @@
 A tool to write a commit message based on [Conventional Commits](https://www.conventionalcommits.org/)  
 inspired by [git-cz](https://github.com/streamich/git-cz)
 
+![GitHub CI](https://github.com/Cassin01/rcz/actions/workflows/rust_ci.yml/badge.svg)
+
 ## Installation
 
 ```sh
