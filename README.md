@@ -23,6 +23,15 @@ function gitz() {
   fi
 }
 ```
+or
+
+`.gitconfig`
+```.gitconfig
+[alias]
+  cz = "!gitz() { if local output= ...}; gitz"
+
+```
+
 <details>
 <summary>gif</summary>
 
