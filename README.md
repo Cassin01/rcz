@@ -16,7 +16,8 @@ cargo install rcz
 ```zsh
 # bash
 function gitz() {
-  if local output=$(rcz); then
+  local output
+  if output=$(rcz); then
     git commit -m "${output}"
   else
     echo "Err: failed to generate a commit message"
