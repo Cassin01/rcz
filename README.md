@@ -121,6 +121,8 @@ All section etc `{scope}` that you can add on the format are bellow.
 Other strings (`{body}`, `{footer}`, `{header}` etc) is interpreted as a custom input.  
 The string is used as a prompt message.
 
+Sometimes you don't have a scope and have to delete the brackets. If a space is entered for scope, brackets are removed altogether. [#6](https://github.com/Cassin01/rcz/issues/6)
+
 A example for your customize is bellow.
 
 ```toml
