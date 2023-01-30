@@ -100,7 +100,7 @@ fn inline(name: &str, index: usize, types: &[Type]) -> String {
                 .with_prompt(x)
                 .interact_text()
                 .unwrap();
-            input
+            if input == " " { "".to_string() } else { input }
         }
     }
 }
