@@ -92,7 +92,11 @@ fn inline(name: &str, index: usize, types: &[Type]) -> String {
                 .with_prompt("scope")
                 .interact_text()
                 .unwrap();
-            "(".to_owned() + &input + ")"
+            if input == " " {
+                "".to_string()
+            } else {
+                "(".to_owned() + &input + ")"
+            }
         }
         cmd if shell_command(cmd) => command(&cmd[1..cmd.len() - 1]).unwrap(),
         x => {
